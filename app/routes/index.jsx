@@ -21,7 +21,7 @@ export default function Index() {
   const { Profiles, role, userId, myProfile } = useLoaderData();
   const [searchText, setSearchText] = useState("");
   const [show, setShow] = useState(null);
-
+  console.log(role, "role");
   const toggle = (i) => {
     if (show == i) {
       return setShow(null);
@@ -30,7 +30,13 @@ export default function Index() {
   };
   return (
     <div>
-      <div>{role[0].profileAs == "recruiter" ? <RecruiterNav /> : <Nav />}</div>
+      {role.length > 0 ? (
+        <div>
+          {role[0].profileAs == "recruiter" ? <RecruiterNav /> : <Nav />}
+        </div>
+      ) : (
+        <Nav />
+      )}
 
       <div className="w-6/12 bg-slate-200">
         {/* Search bar */}
