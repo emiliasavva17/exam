@@ -159,7 +159,7 @@ export default function Seed() {
       </Form>
       <br />
       it is better to creat yourself at least oe profile and in the update you
-      can add courses and education
+      can add courses and education 
     </div>
   );
 }
