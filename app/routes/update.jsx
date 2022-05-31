@@ -54,7 +54,7 @@ export async function action({ request }) {
     phone: body.get("Phone"),
     profilePic: body.get("ProfilePic"),
     bio: body.get("Bio"),
-    trimBio: trim,
+    trimBio: body.get("Bio").slice(0, 120) + " ...",
     tags: body.get("Tags"),
     userId: session.get("userId"),
     linkedIn: body.get("LinkedIn"),
