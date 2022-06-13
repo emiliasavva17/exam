@@ -39,7 +39,13 @@ export default function ProfilePage() {
   var tagsArr = Profile.tags.split(",");
   return (
     <div>
-      <div>{!role[0].profileAs ? <Nav /> : <RecruiterNav />}</div>
+      {role.length > 0 ? (
+        <div>
+          {role[0].profileAs == "recruiter" ? <RecruiterNav /> : <Nav />}
+        </div>
+      ) : (
+        <Nav />
+      )}
 
       <div className="flex content-around justify-around m-10">
         <div className="border-2 rounded px-10 py-16 w-9/12">
