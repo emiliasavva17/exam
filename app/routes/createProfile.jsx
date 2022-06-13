@@ -74,7 +74,7 @@ export default function CreateProfile() {
                       size="41"
                       placeholder={"Your Name"}
                       className={`my-3 px-5 ${
-                        actionData?.errors.name.message
+                        actionData?.errors.name
                           ? "border-2 border-red-500"
                           : null
                       }`}
